@@ -1,0 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8; /* Azul claro suave */
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+}
+
+h1 {
+    color: #1e3a5f; /* Azul escuro */
+    font-size: 2.5rem;
+}
+
+#countdown {
+    font-size: 2rem;
+    color: #2d6a4f; /* Verde escuro */
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #3a506b; /* Azul médio */
+    font-family: 'Pacifico', cursive;
+}
+
+#photo {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 3px solid #3a506b; /* Borda azul para destacar a imagem */
+}
+
+#message, #photo {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#message.visible, #photo.visible {
+    opacity: 1;
+}
