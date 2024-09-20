@@ -39,23 +39,22 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = secondsLeft;
 
     const message = messages[Math.min(messages.length - 1, Math.floor(daysLeft / 10))];
-    const image = getRandomImage(); // Usando a função para imagem aleatória
-
     const messageEl = document.getElementById('message');
-    const photoEl = document.getElementById('photo');
 
     // Efeito de transição
     messageEl.classList.remove('visible');
-    photoEl.classList.remove('visible');
 
     setTimeout(() => {
         messageEl.textContent = message;
-        photoEl.src = image; // Define a imagem aleatória
         messageEl.classList.add('visible');
-        photoEl.classList.add('visible');
     }, 1000);
 }
 
 // Atualizar a contagem a cada segundo
 setInterval(updateCountdown, 1000);
 
+// Quando a página carregar, defina a imagem aleatória
+window.onload = function() {
+    const photoEl = document.getElementById('photo');
+    photoEl.src = getRandomImage(); // Define a imagem aleatória ao carregar a página
+};
