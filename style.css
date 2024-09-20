@@ -1,10 +1,11 @@
+/* CSS existente */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f4f8; /* Azul claro suave */
+    background-color: #f0f4f8; 
     margin: 0;
 }
 
@@ -14,13 +15,13 @@ body {
 }
 
 h1 {
-    color: #1e3a5f; /* Azul escuro */
+    color: #1e3a5f;
     font-size: 2.5rem;
 }
 
 #countdown {
     font-size: 2rem;
-    color: #2d6a4f; /* Verde escuro */
+    color: #2d6a4f;
     margin: 20px 0;
     font-family: 'Courier New', monospace;
 }
@@ -28,7 +29,7 @@ h1 {
 #message {
     margin-top: 20px;
     font-size: 1.8rem;
-    color: #3a506b; /* Azul médio */
+    color: #3a506b;
     font-family: 'Pacifico', cursive;
 }
 
@@ -37,7 +38,7 @@ h1 {
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
-    border: 3px solid #3a506b; /* Borda azul para destacar a imagem */
+    border: 3px solid #3a506b;
 }
 
 #message, #photo {
@@ -47,4 +48,30 @@ h1 {
 
 #message.visible, #photo.visible {
     opacity: 1;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reduzindo o tamanho do título */
+    }
+    #countdown {
+        font-size: 1.5rem; /* Tamanho menor para contagem */
+    }
+    #message {
+        font-size: 1.5rem; /* Tamanho menor para mensagem */
+    }
+    #photo {
+        width: 80%; /* Ajustando a largura da imagem */
+        max-width: 300px; /* Limite máximo de largura */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Tamanho ainda menor para telas pequenas */
+    }
+    #countdown, #message {
+        font-size: 1.2rem; /* Tamanho ainda menor para contagem e mensagem */
+    }
 }
