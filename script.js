@@ -17,6 +17,12 @@ const images = [
     "imagens/foto4.jpeg",
 ];
 
+// Função para escolher uma imagem aleatória
+function getRandomImage() {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+}
+
 // Função para atualizar a contagem regressiva
 function updateCountdown() {
     const now = new Date();
@@ -33,7 +39,7 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = secondsLeft;
 
     const message = messages[Math.min(messages.length - 1, Math.floor(daysLeft / 10))];
-    const image = images[Math.min(images.length - 1, Math.floor(daysLeft / 10))];
+    const image = getRandomImage(); // Usando a função para imagem aleatória
 
     const messageEl = document.getElementById('message');
     const photoEl = document.getElementById('photo');
@@ -44,7 +50,7 @@ function updateCountdown() {
 
     setTimeout(() => {
         messageEl.textContent = message;
-        photoEl.src = image;
+        photoEl.src = image; // Define a imagem aleatória
         messageEl.classList.add('visible');
         photoEl.classList.add('visible');
     }, 1000);
@@ -52,3 +58,4 @@ function updateCountdown() {
 
 // Atualizar a contagem a cada segundo
 setInterval(updateCountdown, 1000);
+
