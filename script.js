@@ -11,10 +11,10 @@ const messages = [
 ];
 
 const images = [
-    "C:/Users/daniel.ricarte/Documents/Dev/Contagem/imagens/foto1.jpeg",
-    "C:/Users/daniel.ricarte/Documents/Dev/Contagem/imagens/foto2.jpeg",
-    "C:/Users/daniel.ricarte/Documents/Dev/Contagem/imagens/foto3.jpeg",
-    "C:/Users/daniel.ricarte/Documents/Dev/Contagem/imagens/foto4.jpeg",
+    "/Users/drricarte/Documents/Dev/Contagem/imagens/foto1.jpeg",
+    "/Users/drricarte/Documents/Dev/Contagem/imagens/foto2.jpeg",
+    "/Users/drricarte/Documents/Dev/Contagem/imagens/foto3.jpeg",
+    "/Users/drricarte/Documents/Dev/Contagem/imagens/foto4.jpeg",
 ];
 
 // Função para atualizar a contagem regressiva
