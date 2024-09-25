@@ -1,5 +1,5 @@
 // Data prevista para o nascimento do Ethan
-const birthDate = new Date('2024-11-14T00:00:00');
+const birthDate = new Date('2024-11-01T14:00:00');
 
 // Mensagens e imagens para os diferentes dias
 const messages = [
@@ -23,6 +23,12 @@ function getRandomImage() {
     return images[randomIndex];
 }
 
+// Função para escolher uma mensagem aleatória
+function getRandomMessage() {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    return messages[randomIndex];
+}
+
 // Função para atualizar a contagem regressiva
 function updateCountdown() {
     const now = new Date();
@@ -38,14 +44,15 @@ function updateCountdown() {
     document.getElementById('minutes').textContent = minutesLeft;
     document.getElementById('seconds').textContent = secondsLeft;
 
-    const message = messages[Math.min(messages.length - 1, Math.floor(daysLeft / 10))];
+    // Seleciona uma mensagem aleatória
+    const randomMessage = getRandomMessage();
     const messageEl = document.getElementById('message');
 
     // Efeito de transição
     messageEl.classList.remove('visible');
 
     setTimeout(() => {
-        messageEl.textContent = message;
+        messageEl.textContent = randomMessage;
         messageEl.classList.add('visible');
     }, 1000);
 }
