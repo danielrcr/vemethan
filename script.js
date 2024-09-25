@@ -43,25 +43,21 @@ function updateCountdown() {
     document.getElementById('hours').textContent = hoursLeft;
     document.getElementById('minutes').textContent = minutesLeft;
     document.getElementById('seconds').textContent = secondsLeft;
-
-    // Seleciona uma mensagem aleatória
-    const randomMessage = getRandomMessage();
-    const messageEl = document.getElementById('message');
-
-    // Efeito de transição
-    messageEl.classList.remove('visible');
-
-    setTimeout(() => {
-        messageEl.textContent = randomMessage;
-        messageEl.classList.add('visible');
-    }, 1000);
 }
 
 // Atualizar a contagem a cada segundo
 setInterval(updateCountdown, 1000);
 
-// Quando a página carregar, defina a imagem aleatória
+// Quando a página carregar, defina a imagem e mensagem aleatória
 window.onload = function() {
     const photoEl = document.getElementById('photo');
-    photoEl.src = getRandomImage(); // Define a imagem aleatória ao carregar a página
+    const messageEl = document.getElementById('message');
+
+    // Define a imagem e mensagem aleatória ao carregar a página
+    photoEl.src = getRandomImage();
+    messageEl.textContent = getRandomMessage();
+
+    // Exibir a mensagem e a imagem com a transição
+    messageEl.classList.add('visible');
+    photoEl.classList.add('visible');
 };
